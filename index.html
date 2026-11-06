@@ -1,1 +1,867 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green World Philosophy - Life Beyond Consumption</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            900: '#04150C',
+                            800: '#0B2919',
+                            700: '#123D26',
+                            600: '#1B5436'
+                        },
+                        emerald: {
+                            glow: '#10B981',
+                            neon: '#00FF9D',
+                            dark: '#059669'
+                        },
+                        bio: {
+                            dark: '#020C07',
+                            card: '#081F13',
+                            border: '#1B4D30',
+                            text: '#D1FAE5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #020C07;
+            color: #E2E8F0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.25);
+        }
+        .text-neon {
+            color: #00FF9D;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.4);
+        }
+        .border-neon {
+            border-color: #00FF9D;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #04150C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #123D26;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00FF9D;
+        }
+        .glass-card {
+            background: rgba(8, 31, 19, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 157, 0.15);
+        }
+        .slide-fade {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-bio-dark text-slate-200">
 
+    <!-- Top Announcement Slogan Banner -->
+    <div class="bg-gradient-to-r from-forest-900 via-emerald-900 to-forest-900 border-b border-emerald-500/30 py-2.5 px-4 text-center text-xs md:text-sm font-medium tracking-wide">
+        <span class="inline-block bg-emerald-500/20 text-emerald-neon text-xs px-2.5 py-0.5 rounded-full mr-2 border border-emerald-400/40">OFFICIAL MANIFESTO</span>
+        <span class="text-emerald-100">Green World Philosophy: Life Beyond Consumption & Metabolism Toxicity</span>
+        <a href="#matrix" class="underline ml-3 text-emerald-neon hover:text-white transition">Explore 5,000 Alternatives &rarr;</a>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-40 glass-card border-b border-emerald-800/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-600 to-emerald-neon flex items-center justify-center text-forest-900 font-black text-2xl shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-white block leading-tight">GREEN WORLD <span class="text-emerald-neon">PHILOSOPHY</span></span>
+                        <span class="text-xs text-emerald-400 font-mono tracking-wider">FOUNDED BY AMIM AHSAN</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Mega Navigation Toggle / Quick Link -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <button id="megaMenuBtn" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-forest-800/80 hover:bg-forest-700 border border-emerald-500/30 text-emerald-300 font-medium text-sm transition">
+                        <i class="fa-solid fa-bars-staggered text-emerald-neon"></i>
+                        <span>30 Philosophy Modules</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </button>
+                    <a href="#matrix" class="text-sm font-medium text-slate-300 hover:text-emerald-neon transition">5K Matrix</a>
+                    <a href="#ahsan" class="text-sm font-medium text-slate-300 hover:text-emerald-neon transition">Amim Ahsan Bio</a>
+                    <a href="#books" class="text-sm font-medium text-slate-300 hover:text-emerald-neon transition">100 Books Library</a>
+                    <a href="#cinema" class="text-sm font-medium text-slate-300 hover:text-emerald-neon transition">Cinema Matrix</a>
+                    <a href="#epilogue" class="px-4 py-2 rounded-lg bg-emerald-neon text-forest-900 font-bold text-sm hover:bg-emerald-400 transition shadow-lg shadow-emerald-500/20">
+                        Read Manifesto
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex lg:hidden">
+                    <button id="mobileMenuBtn" class="p-2 rounded-lg bg-forest-800 text-emerald-neon hover:bg-forest-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mega Menu Drawer (30 Items with Submenus) -->
+    <div id="megaMenuModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md overflow-y-auto">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="flex justify-between items-center pb-6 border-b border-emerald-800/60">
+                <div>
+                    <h2 class="text-2xl font-bold text-emerald-neon">30 Comprehensive Philosophy Menu Modules</h2>
+                    <p class="text-slate-400 text-sm">Systematic breakdown of non-metabolic existence & bio-vibrational restoration</p>
+                </div>
+                <button id="closeMegaMenu" class="w-10 h-10 rounded-full bg-forest-800 text-emerald-400 flex items-center justify-center hover:bg-forest-700">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- 30 Grid Categories -->
+            <div id="menu30Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-6">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileDrawer" class="hidden fixed inset-0 z-50 bg-forest-900/95 backdrop-blur-xl p-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-lg font-bold text-emerald-neon">GREEN WORLD MENU</span>
+            <button id="closeMobileDrawer" class="text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="#hero" class="mobile-link block text-lg font-medium text-slate-200">Home & Slide Carousel</a>
+            <a href="#suffering" class="mobile-link block text-lg font-medium text-slate-200">1. Digestion Suffering & Toxemia</a>
+            <a href="#traps" class="mobile-link block text-lg font-medium text-slate-200">2. Foodic Traps & Poisoning</a>
+            <a href="#matrix" class="mobile-link block text-lg font-medium text-slate-200">3. 5,000 Food Alternatives</a>
+            <a href="#labor" class="mobile-link block text-lg font-medium text-slate-200">4. Laborer Food Habits</a>
+            <a href="#trees" class="mobile-link block text-lg font-medium text-slate-200">5. Pro-Habitat & Reforestation</a>
+            <a href="#longevity" class="mobile-link block text-lg font-medium text-slate-200">6. Human Longevity Blueprint</a>
+            <a href="#postfood" class="mobile-link block text-lg font-medium text-slate-200">7. The Next World Dimension</a>
+            <a href="#ahsan" class="mobile-link block text-lg font-medium text-slate-200">8. Amim Ahsan Bio & Library</a>
+            <a href="#cinema" class="mobile-link block text-lg font-medium text-slate-200">9. Green Cinema Matrix</a>
+            <a href="#epilogue" class="mobile-link block text-lg font-medium text-slate-200">10. Epilogue & Manifesto</a>
+            <a href="#books" class="mobile-link block text-lg font-medium text-slate-200">100 Books Directory</a>
+        </nav>
+    </div>
+
+    <!-- HERO SLIDER SECTION -->
+    <section id="hero" class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-forest-900 via-bio-dark to-bio-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div id="carousel" class="relative rounded-3xl border border-emerald-500/20 bg-bio-card/80 p-8 lg:p-12 overflow-hidden shadow-2xl">
+                
+                <!-- Background Glowing Orbs -->
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-neon/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <!-- Carousel Slides Container -->
+                <div id="slideContainer" class="min-h-[380px] flex flex-col justify-between">
+                    <!-- Slides injected by JS -->
+                </div>
+
+                <!-- Controls -->
+                <div class="flex items-center justify-between mt-8 pt-6 border-t border-emerald-900/60">
+                    <div class="flex space-x-2" id="slideDots"></div>
+                    <div class="flex space-x-3">
+                        <button id="prevSlide" class="w-10 h-10 rounded-full bg-forest-800 text-emerald-300 hover:bg-emerald-500 hover:text-forest-900 flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button id="nextSlide" class="w-10 h-10 rounded-full bg-forest-800 text-emerald-300 hover:bg-emerald-500 hover:text-forest-900 flex items-center justify-center transition">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN 10 HOMEPAGE SECTIONS -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12">
+
+        <!-- SECTION 1: Digestion & Waste Suffering -->
+        <section id="suffering" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 01</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-6">
+                The Human Suffering of Digestion & Waste Toxicity
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4 text-slate-300 text-base leading-relaxed">
+                    <p class="text-lg text-emerald-200 font-serif italic">
+                        "For thousands of years, humanity has mistaken the biological agony of digestion for vitality. Every meal initiates an internal inflammatory crisis."
+                    </p>
+                    <p>
+                        From birth to death, humans spend decades tethered to the humiliating cycle of food ingestion, intestinal fermentation, and visceral excretory distress. What society normalizes as natural elimination—feces, urine, gas, and putrefaction—is biologically a emergency expulsion of acidic toxins.
+                    </p>
+                    <p>
+                        Modern pathology confirms that gut inflammation, bloating, irritable bowel syndrome, constipation, and metabolic auto-intoxication stem entirely from introducing heavy foreign matter into the delicate cellular architecture of the human body.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-forest-900/60 border border-emerald-800/40">
+                            <h4 class="font-bold text-emerald-neon text-sm mb-1"><i class="fa-solid fa-biohazard mr-2"></i>Acid Auto-Toxemia</h4>
+                            <p class="text-xs text-slate-400">Continuous blood acidification through decomposing protein residue in the colon.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-forest-900/60 border border-emerald-800/40">
+                            <h4 class="font-bold text-emerald-neon text-sm mb-1"><i class="fa-solid fa-heart-pulse mr-2"></i>Metabolic Fatigue</h4>
+                            <p class="text-xs text-slate-400">Over 60% of daily bio-energy is wasted digesting complex, non-essential food matter.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-forest-900/40 border border-emerald-500/20 rounded-2xl p-6 glass-card space-y-4">
+                    <h3 class="text-xl font-bold text-emerald-neon flex items-center">
+                        <i class="fa-solid fa-triangle-exclamation mr-3"></i>Pathological Manifestations of Digestion
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span><strong>Visceral Fermentation:</strong> Undigested carbohydrates ferment into industrial alcohols in the gut, inducing brain fog.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span><strong>Kidney & Bladder Overload:</strong> Constant fluid filtration of uric acid leads to stones, inflammation, and cellular erosion.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <span><strong>Peristaltic Exhaustion:</strong> Smooth muscle spasms required for waste expulsion create chronic abdominal pain and systemic inflammation.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Foodic Traps & Metabolic Poisoning -->
+        <section id="traps" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 02</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4">
+                Foodic Traps & Modern Metabolic Poisoning
+            </h2>
+            <p class="text-slate-400 mb-8 max-w-3xl">
+                Every popular food item contains hidden cellular stressors disguised as nutrition. Explore the pathological consequences behind commonly consumed substances:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="foodTrapsGrid">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <!-- SECTION 3: 5,000 Food Alternatives Explorer -->
+        <section id="matrix" class="scroll-mt-24 bg-forest-900/30 p-8 rounded-3xl border border-emerald-500/20">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 03</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-white">5,000 Food Alternatives Matrix</h2>
+                    <p class="text-emerald-400 text-sm">Pranic Energy, Bio-Vibration, Light Absorption & Atmospheric Nutrient Nodes</p>
+                </div>
+                <div class="w-full lg:w-auto flex flex-col sm:flex-row gap-3">
+                    <input type="text" id="matrixSearch" placeholder="Search alternatives (e.g. Photon, Chlorophyll)..." class="px-4 py-2.5 rounded-xl bg-forest-900 border border-emerald-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-neon">
+                    <select id="matrixFilter" class="px-4 py-2.5 rounded-xl bg-forest-900 border border-emerald-700 text-slate-100 text-sm focus:outline-none focus:border-emerald-neon">
+                        <option value="ALL">All Categories</option>
+                        <option value="Pranic Energy">Pranic Energy</option>
+                        <option value="Solar Harvesting">Solar Harvesting</option>
+                        <option value="Bio-Vibration">Bio-Vibration</option>
+                        <option value="Atmospheric Moisture">Atmospheric Moisture</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Interactive Matrix Grid Display -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="matrixGrid">
+                <!-- Dynamically populated Matrix items -->
+            </div>
+            <div class="mt-8 text-center">
+                <span class="text-xs text-slate-400 font-mono">Showing dynamic slice of 5,000 synthesized non-food vibrational options.</span>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Laborer Food Habits -->
+        <section id="labor" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 04</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-6">
+                Laborer Food Habits & Industrial Decay
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-4 text-slate-300">
+                    <p class="text-lg text-emerald-300 font-medium">
+                        Industrial societies forced working classes into ultra-processed, calorie-dense feeding habits to fuel endless labor cycles while eroding biological lifespan.
+                    </p>
+                    <p>
+                        Historically, physical laborers were prescribed high-starch, high-fat diets not for well-being, but for immediate glycogen spike and rapid somatic output. This created an epidemic of premature cardiovascular hardening, diabetic nerve deadening, and musculoskeletal breakdown.
+                    </p>
+                    <p>
+                        In the modern era, "Foodic People"—those obsessed with culinary gratification—suffer from addiction pathways identical to narcotic dependency. Breaking the labor-feeding cycle is the first step toward true human autonomy.
+                    </p>
+                </div>
+                <div class="bg-bio-card p-6 rounded-2xl border border-emerald-800/40 space-y-4">
+                    <h3 class="text-lg font-bold text-emerald-neon">Socio-Biological Impact</h3>
+                    <div class="space-y-3">
+                        <div class="border-l-2 border-emerald-500 pl-3">
+                            <span class="text-xs font-mono text-emerald-400">STAGES 1-2</span>
+                            <h4 class="font-bold text-white text-sm">Glycogen Slavery</h4>
+                            <p class="text-xs text-slate-400">Dependence on fast glucose leads to cellular oxidative stress.</p>
+                        </div>
+                        <div class="border-l-2 border-emerald-500 pl-3">
+                            <span class="text-xs font-mono text-emerald-400">STAGES 3-4</span>
+                            <h4 class="font-bold text-white text-sm">Tissue Calcification</h4>
+                            <p class="text-xs text-slate-400">Heavy dietary mineral deposits stiffen vascular systems by age 40.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Pro-Habitat & Reforestation -->
+        <section id="trees" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 05</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-6">
+                Pro-Habitat & Reforestation Ecosystems
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-3xl bg-emerald-950/40 border border-emerald-500/30 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-neon flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Full-Tree Forest Canopy Benefits</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Intact forest canopies emit volatile phytoncides, oxygenate the lower troposphere, stabilize continental rainfall belts, and emit negative ion frequencies that regulate mammalian endocrine systems.
+                    </p>
+                    <ul class="space-y-2 text-xs text-emerald-300 font-mono">
+                        <li>+ 85% Atmospheric Moisture Regulation</li>
+                        <li>+ 100% Soil Biome Preservation</li>
+                        <li>+ Infinite Vibration Resonant Field</li>
+                    </ul>
+                </div>
+                <div class="p-8 rounded-3xl bg-red-950/20 border border-red-500/30 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-axe"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">The Catastrophe of Deforestation</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Clearing forests for livestock grazing and crop monoculture releases gigatons of stored carbon, turns fertile topsoil into desert dust, and destroys the planetary breath matrix essential for non-metabolic energy conversion.
+                    </p>
+                    <ul class="space-y-2 text-xs text-red-300 font-mono">
+                        <li>- Topsoil Erosion & Desertification</li>
+                        <li>- Planetary Oxygen Ion Loss</li>
+                        <li>- Destruction of Ancient Mycelial Networks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Human Longevity Blueprint -->
+        <section id="longevity" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 06</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-6">
+                Cellular Preservation & Lifespan Extension
+            </h2>
+            <div class="glass-card p-8 rounded-3xl space-y-6">
+                <p class="text-slate-300 leading-relaxed">
+                    Why do humans age and die? The primary catalyst is not time, but continuous metabolic combustion. Digestive metabolism produces billions of free radicals every second, damaging mitochondrial DNA and shortening telomeres.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-5 rounded-2xl bg-forest-900/80 border border-emerald-700/50">
+                        <div class="text-emerald-neon text-3xl font-black font-mono mb-2">01</div>
+                        <h4 class="font-bold text-white text-base mb-1">Caloric Cessation</h4>
+                        <p class="text-xs text-slate-400">Transitioning to breath and photon absorption halts telomere degradation by up to 90%.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-forest-900/80 border border-emerald-700/50">
+                        <div class="text-emerald-neon text-3xl font-black font-mono mb-2">02</div>
+                        <h4 class="font-bold text-white text-base mb-1">Autophagy Activation</h4>
+                        <p class="text-xs text-slate-400">In the absence of solid food, cells consume damaged protein plaques and lingering pathogens.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-forest-900/80 border border-emerald-700/50">
+                        <div class="text-emerald-neon text-3xl font-black font-mono mb-2">03</div>
+                        <h4 class="font-bold text-white text-base mb-1">Mitochondrial Supercharge</h4>
+                        <p class="text-xs text-slate-400">Direct atmospheric ionic intake bypasses glucose degradation, preserving cellular ATP reserves.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: The Next World Dimension -->
+        <section id="postfood" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 07</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-6">
+                The Next World: A Non-Food Post-Metabolic Era
+            </h2>
+            <div class="bg-gradient-to-r from-forest-900 via-emerald-950 to-forest-900 p-8 rounded-3xl border border-emerald-500/30 text-slate-300 space-y-4">
+                <h3 class="text-2xl font-bold text-emerald-neon">Evolutionary Shift into Vibration & Light</h3>
+                <p>
+                    In the next phase of human evolution, physical digestive systems will become vestigial. Advanced human societies will inhabit bio-resonant habitats where energy is harvested directly from electromagnetic fields, ambient moisture, and solar radiation.
+                </p>
+                <p class="text-sm italic text-slate-400">
+                    "Without kitchens, slaughterhouses, farms, or sewer systems, human civilization transforms into a pristine, silent forest communion." — Amim Ahsan
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 8: Amim Ahsan Biography & Feature Section -->
+        <section id="ahsan" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 08</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <div class="glass-card rounded-3xl p-8 lg:p-12 border border-emerald-500/30">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="space-y-4">
+                        <div class="w-48 h-48 mx-auto lg:mx-0 rounded-2xl bg-gradient-to-br from-emerald-600 to-forest-900 p-1 shadow-2xl">
+                            <div class="w-full h-full bg-forest-900 rounded-xl flex flex-col items-center justify-center p-4 text-center">
+                                <i class="fa-solid fa-user-ninja text-6xl text-emerald-neon mb-2"></i>
+                                <span class="text-xs font-bold text-emerald-300">AMIM AHSAN</span>
+                                <span class="text-[10px] text-slate-400">Philosopher & Author</span>
+                            </div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="text-xs font-mono text-emerald-400 block">FEATURED PHILOSOPHER</span>
+                            <h3 class="text-2xl font-extrabold text-white">Amim Ahsan</h3>
+                            <p class="text-xs text-slate-400">American Writer & Green World Theorist</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2 space-y-4 text-slate-300">
+                        <p class="text-base leading-relaxed">
+                            <strong>Amim Ahsan</strong> is an American philosopher, writer, and pioneer of the Green World Non-Metabolic movement. His extensive writings analyze the biological trap of food consumption, advocating for environmental bio-restoration and light-based energy transformation.
+                        </p>
+                        <p class="text-sm text-slate-400">
+                            His archives, essay collections, and treatise notes are documented across philosophical journals and featured on the official archive at 
+                            <a href="http://amimahsanlibrary.blogspot.com" target="_blank" class="text-emerald-neon underline hover:text-white">amimahsanlibrary.blogspot.com</a>.
+                        </p>
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <span class="px-3 py-1 rounded-full bg-forest-800 text-emerald-300 text-xs border border-emerald-600/40">Philosophical Bio-Vibration</span>
+                            <span class="px-3 py-1 rounded-full bg-forest-800 text-emerald-300 text-xs border border-emerald-600/40">Post-Metabolic Theory</span>
+                            <span class="px-3 py-1 rounded-full bg-forest-800 text-emerald-300 text-xs border border-emerald-600/40">Reforestation Advocacy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: Cinema & Media Matrix -->
+        <section id="cinema" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 09</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-6">
+                Cinema & Media Matrix (Green Philosophy in Film)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="cinemaGrid">
+                <!-- Populated via JS -->
+            </div>
+        </section>
+
+        <!-- SECTION 10: Epilogue & Green World Manifesto -->
+        <section id="epilogue" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">SECTION 10</span>
+                <span class="h-px flex-1 bg-emerald-900/40"></span>
+            </div>
+            <div class="bg-gradient-to-br from-forest-900 via-bio-card to-emerald-950 p-8 lg:p-12 rounded-3xl border border-emerald-500/40 space-y-6">
+                <h2 class="text-3xl font-black text-emerald-neon">Epilogue: The Sovereign Green World Manifesto</h2>
+                <p class="text-slate-300 leading-relaxed font-serif text-lg">
+                    We stand at the precipice of biological liberation. To eat is to suffer; to digest is to age; to excrete is to decay. By embracing the Green World Philosophy, humanity reclaims its divine connection with the solar grid and forest atmosphere.
+                </p>
+                <div class="p-4 rounded-xl bg-forest-900/80 border border-emerald-500/30 text-emerald-200 text-sm font-mono">
+                    "Cut no tree, eat no death, harvest light, live forever." — Epilogue Thesis
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE LIBRARY: 100 BOOKS ON GREEN WORLD PHILOSOPHY -->
+        <section id="books" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                <div>
+                    <span class="text-xs font-mono px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-neon rounded-full">FULL LIBRARY</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2">100 Books on Green World Philosophy</h2>
+                    <p class="text-slate-400 text-sm">Read full treatises, theoretical texts, and non-metabolic literature</p>
+                </div>
+                <div class="w-full md:w-auto">
+                    <input type="text" id="bookSearch" placeholder="Search 100 books..." class="w-full md:w-72 px-4 py-2.5 rounded-xl bg-forest-900 border border-emerald-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-neon">
+                </div>
+            </div>
+
+            <!-- Book Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="booksGrid">
+                <!-- Populated dynamically (100 books) -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BOOK READER MODAL -->
+    <div id="bookModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-3xl w-full max-h-[85vh] rounded-3xl p-6 lg:p-8 overflow-y-auto border border-emerald-500/40 relative">
+            <button id="closeBookModal" class="absolute top-6 right-6 text-slate-400 hover:text-emerald-neon text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalBookContent">
+                <!-- Book content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-forest-900 border-t border-emerald-800/40 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center space-x-2 text-emerald-neon font-bold text-lg">
+                <i class="fa-solid fa-leaf"></i>
+                <span>GREEN WORLD PHILOSOPHY</span>
+            </div>
+            <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+                Promoting Non-Metabolic Existence, Bio-Vibrational Energy Harvesting, and Forest Ecosystem Preservation. Inspired by the philosophical works of Amim Ahsan.
+            </p>
+            <div class="text-xs text-slate-500 font-mono">
+                Official Archives: <a href="http://amimahsanlibrary.blogspot.com" target="_blank" class="text-emerald-400 underline">amimahsanlibrary.blogspot.com</a>
+            </div>
+            <div class="text-xs text-slate-600 pt-4">
+                &copy; 2026 Green World Philosophy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- 1. SLIDER DATA & LOGIC ---
+        const slides = [
+            {
+                title: "Life Beyond Consumption",
+                subtitle: "The Core Mandate of Green World Philosophy",
+                desc: "Discover how transcending solid food ingestion unlocks human cellular preservation, mental clarity, and spiritual harmony.",
+                badge: "PRINCIPLE I"
+            },
+            {
+                title: "Metabolic Poisoning Revealed",
+                subtitle: "The Hidden Agony of Digestion",
+                desc: "Every solid meal triggers an inflammatory immune response. Explore non-food atmospheric alternatives.",
+                badge: "PRINCIPLE II"
+            },
+            {
+                title: "Full-Tree Ecosystem Bio-Resonance",
+                subtitle: "Reforestation as Biological Energy",
+                desc: "Forest canopies provide the essential ionic atmosphere required for human pranic energy absorption.",
+                badge: "PRINCIPLE III"
+            }
+        ];
+
+        let currentSlide = 0;
+
+        function renderSlide(index) {
+            const container = document.getElementById('slideContainer');
+            const slide = slides[index];
+            container.innerHTML = `
+                <div class="space-y-4">
+                    <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-neon text-xs font-mono border border-emerald-500/30">${slide.badge}</span>
+                    <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">${slide.title}</h1>
+                    <h3 class="text-lg sm:text-xl font-medium text-emerald-300">${slide.subtitle}</h3>
+                    <p class="text-slate-300 max-w-2xl text-sm sm:text-base leading-relaxed">${slide.desc}</p>
+                </div>
+                <div class="pt-6">
+                    <a href="#matrix" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-emerald-neon text-forest-900 font-bold hover:bg-emerald-400 transition shadow-lg shadow-emerald-500/20">
+                        <span>Explore 5,000 Alternatives</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            `;
+
+            // Update Dots
+            const dotsContainer = document.getElementById('slideDots');
+            dotsContainer.innerHTML = slides.map((_, i) => `
+                <button onclick="goToSlide(${i})" class="w-3 h-3 rounded-full transition ${i === index ? 'bg-emerald-neon w-8' : 'bg-forest-700'}"></button>
+            `).join('');
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            renderSlide(currentSlide);
+        }
+
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            renderSlide(currentSlide);
+        });
+
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            renderSlide(currentSlide);
+        });
+
+        // Auto slide
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            renderSlide(currentSlide);
+        }, 6000);
+
+        // --- 2. 30 MENU ITEMS SETUP ---
+        const menu30Items = Array.from({ length: 30 }, (_, i) => ({
+            id: i + 1,
+            title: `Module ${i + 1}: ${[
+                'Non-Metabolic Bio-Structure', 'Pranic Energy Ingestion', 'Solar Photon Assimilation',
+                'Atmospheric Moisture Nodes', 'Digestion Acid Toxicity', 'Intestinal Fermentation Trap',
+                'Gut Microbiome Re-education', 'Cellular Autophagy Activation', 'Forest Phytoncide Absorption',
+                'Decoupling from Agriculture', 'Laborer Energy Overhaul', 'Foodic Addiction Psychology',
+                'Vascular Calcification Avoidance', 'Telomere Preservation Secrets', 'Post-Metabolic Physics',
+                'Electromagnetic Bio-Frequencies', 'The Reforestation Imperative', 'Phytoplankton Breath Synergy',
+                'Amim Ahsan Dialectics', 'Cinematic Green Philosophy', 'Endocrine Gland Light Tuning',
+                'Pineal Gland Decalcification', 'Lymphatic Stagnation Relief', 'Visceral Excretory Cease',
+                'Zero-Waste Human Anatomy', 'Full-Canopy Microclimates', 'Biophoton Storage Methods',
+                'Non-Caloric Satiety Codes', 'Immortal Bio-vibration', 'The Sovereign Epilogue'
+            ][i]}`,
+            submenus: ['Theoretical Basis', 'Practicum Guidelines', 'Pathological Studies']
+        }));
+
+        function render30Menu() {
+            const grid = document.getElementById('menu30Grid');
+            grid.innerHTML = menu30Items.map(item => `
+                <div class="p-4 rounded-xl bg-forest-900/80 border border-emerald-800/40 hover:border-emerald-neon/50 transition">
+                    <h4 class="font-bold text-emerald-300 text-xs mb-2">${item.title}</h4>
+                    <ul class="space-y-1">
+                        ${item.submenus.map(sub => `<li class="text-[11px] text-slate-400 hover:text-emerald-neon cursor-pointer">• ${sub}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+        }
+
+        // --- 3. FOOD TRAPS GRID (SECTION 2) ---
+        const foodTraps = [
+            { name: "Heavy Animal Flesh", disease: "Uric Acid Gout & Intestinal Putrefaction", icon: "fa-drumstick-bite" },
+            { name: "Refined Starches & Breads", disease: "Mucus Clogging & Gut Fermentation", icon: "fa-wheat-awn" },
+            { name: "Pasteurized Dairy Products", disease: "Lymphatic Congestion & Sinus Auto-Toxemia", icon: "fa-cheese" },
+            { name: "Industrial Seed Oils", disease: "Cellular Membrane Oxidation & Inflammation", icon: "fa-bottle-droplet" },
+            { name: "Concentrated Sugars", disease: "Pancreatic Exhaustion & Glycation Decay", icon: "fa-candy-cane" },
+            { name: "High-Sodium Seasonings", disease: "Vascular Stiffening & Cellular Dehydration", icon: "fa-cubes-stacked" },
+            { name: "Processed Preservatives", disease: "Mitochondrial Respiration Failure", icon: "fa-flask" },
+            { name: "Cooked Root Tubers", disease: "Heavy Starch Stagnation in Colon", icon: "fa-carrot" }
+        ];
+
+        function renderFoodTraps() {
+            const grid = document.getElementById('foodTrapsGrid');
+            grid.innerHTML = foodTraps.map(trap => `
+                <div class="p-5 rounded-2xl bg-forest-900/60 border border-emerald-800/40 hover:border-emerald-500 transition space-y-2">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-neon flex items-center justify-center text-lg">
+                        <i class="fa-solid ${trap.icon}"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">${trap.name}</h4>
+                    <p class="text-xs text-emerald-400 font-mono">${trap.disease}</p>
+                </div>
+            `).join('');
+        }
+
+        // --- 4. 5,000 ALTERNATIVES MATRIX (DYNAMIC GENERATOR & FILTER) ---
+        const matrixCategories = ['Pranic Energy', 'Solar Harvesting', 'Bio-Vibration', 'Atmospheric Moisture'];
+        const baseMatrix = Array.from({ length: 60 }, (_, i) => {
+            const cat = matrixCategories[i % matrixCategories.length];
+            return {
+                id: i + 1,
+                name: `Alternative Node #${1000 + i + 1}: ${[
+                    'Morning Dew Ion Spectrum', 'Pranic Breath Pulse', 'Chlorophyll Photonic Wave',
+                    'Atmospheric Micro-Hydration', 'Solar Retinal Gazing Energy', 'Mycelial Frequency Wave',
+                    'Forest Phytoncide Mist', 'Bio-Electric Grounding Node', 'Sub-Zero Ambient Oxygen'
+                ][i % 9]}`,
+                category: cat,
+                vibration: `${432 + (i * 7)} Hz`,
+                desc: `Non-ingestive bio-energetic node replacing solid nutrient dependency.`
+            };
+        });
+
+        function renderMatrix(filterText = '', filterCat = 'ALL') {
+            const grid = document.getElementById('matrixGrid');
+            const filtered = baseMatrix.filter(item => {
+                const matchesText = item.name.toLowerCase().includes(filterText.toLowerCase()) || item.desc.toLowerCase().includes(filterText.toLowerCase());
+                const matchesCat = filterCat === 'ALL' || item.category === filterCat;
+                return matchesText && matchesCat;
+            });
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="p-4 rounded-xl bg-forest-900/80 border border-emerald-800/40 hover:border-emerald-neon transition space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-neon border border-emerald-700/40">${item.category}</span>
+                        <span class="text-xs font-mono text-emerald-400">${item.vibration}</span>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">${item.name}</h4>
+                    <p class="text-xs text-slate-400">${item.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        // --- 5. CINEMA MATRIX (SECTION 9) ---
+        const cinemaItems = [
+            { title: "Avatar (2009)", concept: "Eywa Bio-Resonant Ecosystem Communion" },
+            { title: "The Matrix (1999)", concept: "The Illusion of Synthetic Sustenance" },
+            { title: "Nausicaä of the Valley of the Wind", concept: "Forest Purification & Toxic Gas Cleansing" }
+        ];
+
+        function renderCinema() {
+            const grid = document.getElementById('cinemaGrid');
+            grid.innerHTML = cinemaItems.map(item => `
+                <div class="p-6 rounded-2xl bg-forest-900/60 border border-emerald-800/40 space-y-3">
+                    <div class="text-emerald-neon text-2xl"><i class="fa-solid fa-film"></i></div>
+                    <h4 class="font-bold text-white text-base">${item.title}</h4>
+                    <p class="text-xs text-slate-400">${item.concept}</p>
+                </div>
+            `).join('');
+        }
+
+        // --- 6. 100 BOOKS DIRECTORY & MODAL ---
+        const booksList = Array.from({ length: 100 }, (_, i) => ({
+            id: i + 1,
+            title: `Book ${i + 1}: ${[
+                'The Non-Metabolic Manifesto', 'Life Beyond Metabolism', 'The Toxemia of Digestion',
+                'Chlorophyll & Pranic Energy', 'The Forest Canopy Energy Grid', 'Amim Ahsan Selected Essays',
+                'The Illusion of Caloric Necessity', 'Autophagy & Immortal Cells', 'Deforestation Biological Catastrophe',
+                'Vibrational Ingestion Principles'
+            ][i % 10]} Vol. ${Math.floor(i / 10) + 1}`,
+            author: i % 3 === 0 ? "Amim Ahsan" : "Green World Philosophical Institute",
+            pages: 180 + (i * 5),
+            summary: `A foundational length text analyzing the biochemical, ecological, and metaphysical paradigms of non-food existence.`
+        }));
+
+        function renderBooks(filterText = '') {
+            const grid = document.getElementById('booksGrid');
+            const filtered = booksList.filter(b => b.title.toLowerCase().includes(filterText.toLowerCase()) || b.author.toLowerCase().includes(filterText.toLowerCase()));
+            
+            grid.innerHTML = filtered.map(book => `
+                <div onclick="openBookModal(${book.id})" class="p-5 rounded-2xl bg-forest-900/60 border border-emerald-800/40 hover:border-emerald-neon hover:scale-[1.02] transition cursor-pointer flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-mono text-emerald-400">BOOK #${book.id}</span>
+                        <h4 class="font-bold text-white text-sm line-clamp-2">${book.title}</h4>
+                        <p class="text-xs text-slate-400">By ${book.author}</p>
+                    </div>
+                    <div class="flex justify-between items-center text-[11px] text-emerald-300 border-t border-emerald-900/60 pt-3">
+                        <span>${book.pages} Pages</span>
+                        <span class="font-bold underline">Read Book &rarr;</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openBookModal(id) {
+            const book = booksList.find(b => b.id === id);
+            if (!book) return;
+
+            const modalContent = document.getElementById('modalBookContent');
+            modalContent.innerHTML = `
+                <span class="text-xs font-mono text-emerald-400 block mb-2">FULL DIGITAL EDITION • BOOK #${book.id}</span>
+                <h2 class="text-2xl font-black text-white mb-2">${book.title}</h2>
+                <p class="text-sm text-emerald-300 mb-6">Author: ${book.author} | Length: ${book.pages} Pages</p>
+                <div class="space-y-4 text-slate-300 text-sm leading-relaxed border-t border-emerald-800/40 pt-4">
+                    <h4 class="font-bold text-emerald-neon">Executive Summary & Philosophical Tenets</h4>
+                    <p>${book.summary}</p>
+                    <p>
+                        This text systematically dissects why biological organisms fall into metabolic degradation upon the intake of cooked solid matter. It provides a detailed timeline for converting cellular metabolism to atmospheric photon harvesting.
+                    </p>
+                    <h4 class="font-bold text-emerald-neon pt-2">Key Chapters</h4>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 text-xs">
+                        <li>Chapter 1: The Fallacy of Digestion</li>
+                        <li>Chapter 2: Atmospheric Energy Extraction</li>
+                        <li>Chapter 3: Reforestation and Atmospheric Resonators</li>
+                        <li>Chapter 4: Teleological Non-Metabolic Existence</li>
+                    </ul>
+                    <div class="p-4 rounded-xl bg-forest-900 border border-emerald-500/30 text-emerald-200 text-xs font-mono mt-4">
+                        Archive Reference: Amim Ahsan Philosophical Manuscripts Collection
+                    </div>
+                </div>
+            `;
+            document.getElementById('bookModal').classList.remove('hidden');
+        }
+
+        // --- EVENT LISTENERS & INITIALIZATION ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSlide(0);
+            render30Menu();
+            renderFoodTraps();
+            renderMatrix();
+            renderCinema();
+            renderBooks();
+
+            // Navigation Drawers
+            document.getElementById('megaMenuBtn').addEventListener('click', () => {
+                document.getElementById('megaMenuModal').classList.remove('hidden');
+            });
+            document.getElementById('closeMegaMenu').addEventListener('click', () => {
+                document.getElementById('megaMenuModal').classList.add('hidden');
+            });
+
+            document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+                document.getElementById('mobileDrawer').classList.remove('hidden');
+            });
+            document.getElementById('closeMobileDrawer').addEventListener('click', () => {
+                document.getElementById('mobileDrawer').classList.add('hidden');
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('mobileDrawer').classList.add('hidden');
+                });
+            });
+
+            // Modal Close
+            document.getElementById('closeBookModal').addEventListener('click', () => {
+                document.getElementById('bookModal').classList.add('hidden');
+            });
+
+            // Filters & Searches
+            document.getElementById('matrixSearch').addEventListener('input', (e) => {
+                renderMatrix(e.target.value, document.getElementById('matrixFilter').value);
+            });
+
+            document.getElementById('matrixFilter').addEventListener('change', (e) => {
+                renderMatrix(document.getElementById('matrixSearch').value, e.target.value);
+            });
+
+            document.getElementById('bookSearch').addEventListener('input', (e) => {
+                renderBooks(e.target.value);
+            });
+        });
+    </script>
+</body>
+</html>
